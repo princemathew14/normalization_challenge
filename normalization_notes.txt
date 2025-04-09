@@ -1,0 +1,23 @@
+Normalization Process for Library Database
+
+1) Original Design:
+One large table with book and author details:
+- Redundant author data (name/email repeated for every book)
+- Difficult to update and prone to anomalies
+
+2)Normalization Steps:
+1NF:
+- Ensured atomic values (e.g., no arrays or grouped data)
+
+2NF:
+- Separated author info into its own table to eliminate partial dependencies
+
+3NF:
+- Ensured all non-key fields depend only on primary keys (removed transitive dependencies)
+
+3)Categories (Many-to-Many):
+Books can belong to multiple categories and vice versa.
+- Introduced `categories` table for category names
+- Introduced `book_categories` join table to model many-to-many relationships between books and categories
+
+This structure avoids redundancy and improves scalability.
