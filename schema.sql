@@ -1,3 +1,5 @@
+-- Part 1
+
 CREATE TABLE authors (
        id SERIAL PRIMARY KEY,
        name VARCHAR(100),
@@ -28,6 +30,8 @@ CREATE TABLE books (
    SELECT b.title, b.isbn, b.publication_year, a.name, a.email
    FROM books b
    JOIN authors a ON b.author_id = a.id;
+
+-- Part 2
 
 CREATE TABLE categories (
     id SERIAL PRIMARY KEY,
@@ -73,7 +77,7 @@ JOIN
     categories c ON bc.category_id = c.id
 ORDER BY 
     b.title;
-    
+
 SELECT 
     b.id AS book_id,
     b.title,
